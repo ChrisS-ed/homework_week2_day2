@@ -50,12 +50,19 @@ class Library
   end
 
   def list_all_borrowed_books
-    all_books = []
+    all_books = {}
     @people.each do |key, person|
-      person.books 
-      all_books.push(person.books) if (person.books != {})
+      all_books[person.name] = person.books
+      end
+    all_books.each do |key, book_list|
+      print_borrowed_books(key, book_list)
     end
-    puts "All borrowed books: #{all_books}"
+  end
+
+  def print_borrowed_books(key, book_list)
+    book_list.each do |title, book|
+      puts "#{key} has borrowed #{title}"
+    end
   end
 
 end

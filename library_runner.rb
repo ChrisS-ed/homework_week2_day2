@@ -44,6 +44,7 @@ puts "All people: #{library.list_people}"
 
 # todo: list borrowed books
 library.lend("Wilma", "The Hobbit")
+library.lend("Wilma", "Feersum Endjinn")
 library.lend("Fred", "Histories")
 library.list_all_borrowed_books
 
